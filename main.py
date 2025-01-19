@@ -5,6 +5,7 @@ from constants import *
 
 
 def main():
+    dt = 0
     pygame.init()
     print(
         f"Starting asteroids!\nScreen width: {constants.SCREEN_WIDTH}\nScreen height: {constants.SCREEN_HEIGHT}"
@@ -15,6 +16,7 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
+        player_instance.update(dt)
         screen.fill(0x000000)
         player_instance.draw(screen)
         pygame.display.flip()
